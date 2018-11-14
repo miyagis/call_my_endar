@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calendar Updater</title>
+    <meta charset="utf-8">
+    <!-- tell IE to use the latest rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- set the page width to the size of the device and zoom lvl to 1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap CDN (Content Delivery Network) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- My own CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <h1>{{ page_title }}</h1>
+    <div class="container">
+      <form name="training_data" action="{{ url_for('main_post') }}" method="post">
+        Number of reps:<br>
+        <input type="number" name="number_of_reps"><br>
+        Percentage increase per day:<br>
+        <input type="number" name="percentage_increase">%<br>
+        Number of days:<br>
+        <input type="number" name="number_of_days"><br>
+        <input type="submit" value="Submit">
+      </form>
+    <div class="container">
+    <div class="container">
+      <p>{{ result }}</p>
+    </div>
+  </body>
+</html>
